@@ -1,13 +1,10 @@
 import { MissingParamError } from '../../erros'
 import { badRequest } from '../../helpers'
-import {
-  type HttpRequestProtocol,
-  type HttpResponseProtocol
-} from '../../protocols'
+import { type HttpRequestProtocol, type HttpResponseProtocol } from '../../protocols'
 
 export class SignUpController {
   handle (httpRequest: HttpRequestProtocol): HttpResponseProtocol {
-    const requiredFields = ['name', 'email', 'password']
+    const requiredFields = ['name', 'email', 'password', 'passwordConfirmation']
 
     for (const field of requiredFields) {
       if (!httpRequest?.body[field]) {

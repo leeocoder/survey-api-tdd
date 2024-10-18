@@ -7,6 +7,7 @@ const config: Config = {
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
   testEnvironment: 'node',
+  modulePathIgnorePatterns: ['/protocols/', '/index\\.[jt]s$'],
   transform: {
     '.+\\.ts$': 'ts-jest'
   }
